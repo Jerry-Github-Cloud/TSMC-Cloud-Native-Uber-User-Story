@@ -1,0 +1,131 @@
+[TSMC Cloud Native] : Develop a "Uber"
+===
+
+## 前言
+交大 cloud native week11 課堂作業，假設要開發 Uber，撰寫其 user story 以及 acceptance criteria。
+- 組別: 第五組
+- 姓名: 陳宥僑
+- 學號 310706023
+- GitHub 使用者名稱: kenchen879
+- 繳交期限: 2022/05/02 23:59
+- 繳交格式: 小組上傳 [GitHub](https://github.com/Jerry-Github-Cloud/TSMC-Cloud-Native-Uber-User-Story)
+
+## 說明
+- 想像正在開發一個 「Uber」
+    - 撰寫 user stories
+    - 撰寫 acceptance criteria
+- 在 [GitHub](https://github.com/Jerry-Github-Cloud/TSMC-Cloud-Native-Uber-User-Story) 建立一個 repo(小組進行)
+    - 檢查 user story 檔案是由先前需求所產生的。
+    - 試著用 branch 和修改檔案
+    - 建立一個 pull 請求
+    - 請一位同學撰寫評論並 merge
+
+## 介紹
+
+### Uber
+是一間交通網路公司，總部位於美國加利福尼亞州舊金山，以開發行動應用程式連結乘客和司機，提供載客車輛租賃及媒合共乘的分享型經濟服務。
+
+乘客可以透過應用程式來**預約這些載客的車輛**，並且**追蹤車輛的位置**。營運據點分布在全球785個大都市。人們可以**透過網站或是手機應用程式進入平台**，為共享經濟中的典範。
+![Uber's business model](https://i.imgur.com/iPJMWqC.png)
+
+### 什麼是 user story
+User story 是對軟體系統功能的一種非正式的自然語言描述，但 user story 不等於真正的需求，不過有助於讓系統更好。
+- A user story is an informal, nature language description of features of a software system
+- A user story is not equal to a requirement but helps to better
+
+**User story template**
+
+| 敘述                  | 意義          |
+| --------------------- | ------------- |
+| As a \<persona\>        | Who           |
+| I want \<do something\> | What (Intent) |
+| So that \<get benefit\> | Why           |
+
+> As a \<persona\>, I want \<do something\>, so that \<get benefit\>
+
+**例子 -- AirBnB**
+- As a user I want to book a room
+- As a business traveler I want to find a room with wifi and desk
+- As a budgeted traveler I want to find cheapest and discounted room so that I can save my $$
+- As a host I want to a listing so that I can making $$
+
+**A good user story should be**
+- "I" ndependent (of all others)
+- "N" egotiable (not a specific contract for features)
+- "V" aluable (to the end user)
+- "E" stimable (to a good approximation)
+- "S" mall (so as to fit within an iteration)
+- "T" estable (can be verified with acceptance criteria)
+
+
+### 什麼是 Acceptance Criteria
+- A set of predefined requirements that must be satisfied to make a user story complete
+- It is used for
+    - To define boundaries
+    - To reach consensus
+    - To serve as a basis for tests
+    - For accurate planning and estimation
+
+**Acceptance criteria template**
+Given \<pre-condition\>
+When \<condition\>
+Than \<outcome\>
+
+## 假設要開發一個 Uber
+撰寫 `User Story` 以及其 `Acceptance Criteria`。
+
+* 乘客
+    * 乘客關心乘車品質、收費、服務、效率等等
+* 職業駕駛
+    * 職業駕駛在意是否能快速載客等等
+* 後台管理員
+    * 後台著重在數據與報表、會員資料等等
+ 
+### 乘客
+- 作為一個乘客，我想要有身分驗證，使得我可以開始使用平台服務
+    - Given: 使用者導向登入頁面
+    - When: 使用者點擊「註冊」
+    - Then: 使用者可以填寫個人基本資料與手機號碼
+    - Given: 使用者收到簡訊發送的 OTP
+    - When: 使用者輸入 OTP
+    - Then: 使用者成功註冊並且可以使用 Uber 的服務
+
+- 作為一般乘客，我想要可以看到在叫車前看到價格，使得我可以決定是否搭乘
+    - Given: 使用者導向輸入目的地頁面
+    - When: 使用者輸入目的地
+    - Then: 使用者可以看到距離與價格
+
+- 作為一個使用無接觸付款的乘客，我想要有綁定行動支付或線上刷卡的功能，使得我可以快速付款且保持安全距離
+    - Given: 使用者導向綁定付款方式的頁面
+    - When: 使用者點擊需要綁定的付款方式
+    - Then: 使用者使用 OTP 或頁面導向的方式進行驗證
+    - Given: 使用者導向在選擇付款方式的頁面
+    - When: 使用者選擇需要的付款方式
+    - Then: 使用者在下次搭乘時可以使用這項方式付款
+
+- 作為一般乘客，我想要追蹤駕駛的位置，使得我可以知道駕駛多久抵達我的位置
+    - Given: 使用者導向訂單頁面
+    - When: 使用者點擊駕駛位置
+    - Then: 使用者可以看到駕駛位置和抵達時間，以及自己的所在位置
+
+### 職業駕駛
+- 作為一個職業駕駛，我想要有身分驗證，使得我可以開始使用平台服務乘客
+    - Given: 職業駕駛導向登入頁面 
+    - When: 職業駕駛點擊註冊
+    - Then: 職業駕駛可以提交相關資料(包含駕照、保險、手機號碼等)進行驗證
+    - Given: 職業駕駛收到 SMS 發送代碼
+    - When: 職業駕駛輸入代碼
+    - Then: 進入資料相關驗證
+    - Given: 職業駕駛收到完成驗證通知
+    - When: 職業駕駛登入頁面
+    - Then: 可以點選「開始」按鈕開始工作
+
+- 作為一個職業駕駛，我希望可以根據報價與目的地資訊選擇接不接客，所以我可以得到合理報酬
+    - Given: 職業駕駛導向需求頁面(list)
+    - When: 職業駕駛需求清單(價格與目的地),點選接受請求
+    - Then: 職業駕駛可以看到乘客所在地點與個人相關資訊
+
+- 作為一個職業駕駛，我希望可以與乘客有通訊的畫面，所以我可以在抵達時聯絡乘客
+    - Given: 職業駕駛接受請求後導向地圖頁面
+    - When: 職業駕駛點選聊天的符號
+    - Then: 職業駕駛可以發送訊息給乘客
